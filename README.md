@@ -2,13 +2,9 @@
 
 
 <h2 align="center">Web sitesini ziyaret et
-
+	
 <a href="https://mustafakahsofficial.github.io/FlipClock_src_code/"><img src="https://img.icons8.com/?size=100&id=5X9gz4zZu1PV&format=png&color=000000" /></a>
 
-
-
-
- 
 </h2>
 
 <details >
@@ -196,3 +192,178 @@ $('#container').flipclock('');
 - **Anlamı:** Bu satırda, `#container` id'li HTML öğesinde flip clock başlatılır.
 
 </details>
+
+---
+
+<details >
+<summary align="center">FlipClock kodunun CSS satırları ne işe yarıyor açıklaması</summary>
+
+### 1. `html, body`:
+
+```css
+html, body {
+    height: 100%;  /* Sayfa yüksekliğini tam olarak 100% yap */
+    margin: 0;
+    display: flex; /* Flexbox ile hizalama */
+    justify-content: center; /* Yatay ortalama */
+    align-items: center; /* Dikey ortalama */
+    font-family: Arial, sans-serif; /* Saatin daha estetik görünmesi için font */
+    background-color: #92140C; /* Arka plan rengi */
+}
+```
+
+- **height: 100%**: Sayfa ve body'nin yüksekliğini tam ekran yapar.
+- **margin: 0**: Sayfa çevresindeki varsayılan boşlukları sıfırlar.
+- **display: flex**: Flexbox kullanarak içeriği kolayca hizalar.
+- **justify-content: center**: Yatayda ortalamayı sağlar.
+- **align-items: center**: Dikeyde ortalamayı sağlar.
+- **font-family**: Sayfanın fontunu Arial ve sans-serif olarak ayarlar.
+- **background-color**: Sayfanın arka planını kırmızı (#92140C) yapar.
+
+### 2. `#container`:
+
+```css
+#container {
+    position: absolute;
+    top: 50%; /* Sayfanın üstünden %50 aşağıda */
+    left: 50%; /* Sayfanın sol tarafından %50 sağda */
+    transform: translate(-50%, -50%); /* Elemanı tam ortalayacak şekilde kaydır*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #333;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+}
+```
+
+- **position: absolute**: Elemanı sayfanın herhangi bir yerinde serbest konumlandırmak için kullanılır.
+- **top: 50%, left: 50%**: Sayfanın üst ve sol kısmından %50 uzaklıkta, yani tam ortada olacak şekilde ayarlanır.
+- **transform: translate(-50%, -50%)**: `top` ve `left` ile ortalamayı mükemmel şekilde sağlamak için kullanılır.
+- **display: flex**: İçeriği fleks kutular içinde hizalar.
+- **justify-content: center, align-items: center**: Yatay ve dikey hizalamayı sağlar.
+- **background-color: #333**: Konteynerin arka plan rengini koyu gri yapar.
+- **border-radius: 10px**: Konteynerin köşelerini yuvarlatır.
+- **padding: 20px**: Konteynerin iç kenarlarında boşluk bırakır.
+- **box-shadow**: Konteynerin etrafına gölge ekler, böylece daha şık bir görünüm sağlar.
+
+### 3. `#mask`:
+
+```css
+#mask {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+}
+```
+
+- **position: absolute**: Elemanı konumlandırır.
+- **top: 0, left: 0**: Konteynerin sol üst köşesinde başlar.
+- **width: 100%, height: 100%**: Maskenin, ebeveyn elemanın (container) tamamını kaplamasını sağlar.
+- **z-index: 2**: Maskenin diğer elemanların önünde olmasını sağlamak için z-index kullanılır.
+
+### 4. `.flipclock` ve `ul.flip` gibi FlipClock stilleri:
+
+```css
+.flipclock hr {
+    position: absolute;
+    left: 0;
+    top: 65px;
+    width: 100%;
+    height: 3px;
+    border: 0;
+    background: #000;
+    z-index: 10;
+    opacity: 0;
+}
+ul.flip {
+    position: relative;
+    float: left;
+    margin: 10px;
+    padding: 0;
+    width: 180px;
+    height: 130px;
+    font-size: 120px;
+    font-weight: bold;
+    line-height: 127px;
+}
+```
+
+- **.flipclock hr**: Saatin altına eklenen bir yatay çizgi (hr) elemanını stilize eder.
+    - **position: absolute**: Konumunu kesin olarak belirler.
+    - **top: 65px**: Üstten 65px mesafe ile konumlandırır.
+    - **width: 100%**: Yatayda tam genişlikte olmasını sağlar.
+    - **background: #000**: Çizgiyi siyah renkte yapar.
+    - **opacity: 0**: Görünmez yapar.
+- **ul.flip**: Flip saatinin her bir zaman birimini (saat, dakika, saniye) içeren liste stilidir.
+    - **position: relative**: Elemanın konumunu referans alarak içindeki öğelerle birlikte ayarlanır.
+    - **float: left**: Öğeleri sola hizalar.
+    - **margin: 10px, padding: 0**: Elemanın çevresinde boşluk bırakır.
+    - **font-size: 120px**: Yazı boyutunu büyük tutar.
+    - **font-weight: bold**: Yazı kalın olur.
+    - **line-height: 127px**: Satır yüksekliği ayarlanarak düzgün hizalamayı sağlar.
+
+### 5. Flip saatinin kutularının stilleri:
+
+```css
+ul.flip li {
+    float: left;
+    margin: 0;
+    padding: 0;
+    width: 49%;
+    height: 100%;
+    perspective: 200px;
+    list-style: none;
+}
+```
+
+- **float: left**: Öğeleri sola hizalar.
+- **perspective: 200px**: 3D dönüşüm perspektifi ekler, bu flip saatinin 3D etkisi için kullanılır.
+- **list-style: none**: Liste işaretlerini kaldırır.
+
+### 6. `ul.flip li div` ve animasyon stilleri:
+
+```css
+ul.flip li div {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 49%;
+    overflow: hidden;
+}
+ul.flip li div .shadow {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+}
+```
+
+- **overflow: hidden**: Öğelerin dışarı taşan kısımlarını gizler, böylece animasyon sırasında kutular düzgün görünür.
+- **z-index: 2**: Gölge ve içerik elemanlarının ön planda olmasını sağlar.
+
+### 7. Animasyonlar:
+
+```css
+body.play ul section.ready .up {
+    z-index: 2;
+    animation: flipup 0.5s linear both;
+}
+@keyframes flipup {
+    0% { transform: rotateX(0deg); }
+    100% { transform: rotateX(-90deg); }
+}
+```
+
+- **z-index: 2**: Animasyon sırasında üstte kalmasını sağlar.
+- **animation: flipup 0.5s linear both**: Yavaşça yukarı doğru dönüş animasyonu ekler.
+
+Animasyonlar saat elemanları (saat, dakika, saniye) için yukarı ve aşağı dönerken kullanılan "flipup" ve "flipdown" gibi animasyonlardır.
+
+</details>
+
