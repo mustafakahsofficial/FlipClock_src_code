@@ -1,11 +1,18 @@
 <h1 align="center">Flip Clock HTML CSS JS</h1>
 
 
+<h2 align="center">Web sitesini ziyaret et
+
+<a href="https://mustafakahsofficial.github.io/FlipClock_src_code/"><img src="https://img.icons8.com/?size=100&id=5X9gz4zZu1PV&format=png&color=000000" /></a>
 
 
 
-<details>
-<summary>FlipClock kodunun JavaScript satırları ne işe yarıyor açıklaması</summary>
+
+ 
+</h2>
+
+<details >
+<summary align="center">FlipClock kodunun JavaScript satırları ne işe yarıyor açıklaması</summary>
   
 ### 1. Plugin Başlangıcı
 
