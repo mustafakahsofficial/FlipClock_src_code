@@ -1,5 +1,11 @@
+<h1 align="center">Flip Clock HTML CSS JS</h1>
+
+
+
+
+
 <details>
-<summary>FlipClock kodunun satırları ne işe yarıyor açıklaması</summary>
+<summary>FlipClock kodunun JavaScript satırları ne işe yarıyor açıklaması</summary>
   
 ### 1. Plugin Başlangıcı
 
